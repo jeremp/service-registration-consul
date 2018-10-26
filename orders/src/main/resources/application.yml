@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: orders
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
+        healthCheckPath: /health
+        healthCheckInterval: 5s
+my.firstname: Foo

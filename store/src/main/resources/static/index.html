@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>jQuery Hello World</title>
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        setInterval(function(){hitService()}, 5000);
+
+    });
+
+    function hitService(){
+        $.ajax({
+            url: "/getorder"
+        }).done(function(data) {
+            $( this ).addClass( "done" );
+            $("#msgid").html(""+data);
+        });
+    }
+
+</script>
+
+Let's try to call the order service :
+
+<div id="msgid">
+</div>
+
+</body>
+</html>
