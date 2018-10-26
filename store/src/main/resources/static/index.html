@@ -13,17 +13,20 @@
 
 <script type="text/javascript">
 
+    var index = 0 ;
+
     $(document).ready(function(){
         setInterval(function(){hitService()}, 5000);
 
     });
 
     function hitService(){
+        index++;
         $.ajax({
             url: "/getorder"
         }).done(function(data) {
             $( this ).addClass( "done" );
-            $("#msgid").html(""+data);
+            $("#msgid").append("<p>"+index+"&nbsp;"+data+"</p>");
         });
     }
 

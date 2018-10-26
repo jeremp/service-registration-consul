@@ -38,8 +38,8 @@ public class StoreController {
       ResponseEntity<String> remoteResponse = restTemplate.getForEntity(fullURL, String.class);
       return new ResponseEntity<>("you hit it : "+remoteResponse.getBody(), HttpStatus.OK);
     }else{
-      logger.warn("Not service available !");
-      return new ResponseEntity<>("no oder service up... sorry", HttpStatus.OK);
+      logger.warn("No service available !");
+      return new ResponseEntity<>("no order service up... sorry", HttpStatus.OK);
     }
 
   }
